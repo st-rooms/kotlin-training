@@ -27,4 +27,32 @@ fun add(a : Int, b: Int): Int {
 }
 
 
+// 2. val vs var
+// var = value 값이 바뀌지 않음
+fun hi() {
+    // 변하지 않는값
+    // val === const 와 동일
+    // 자동 추론
+    val a : Int = 10
+
+   //  var e // 불가능
+
+//   var e : string
+
+    // 변할수 있는값
+    var b : Int = 9
+
+    // a = 100 // 불가능
+    b = 200
+
+    // 자동으로 타입 추론
+    // val 인지 var인지만 구분해서 써줘야함
+    val c = 100
+    var d = 100
+    var name = "ho"
+
+
+}
+
+
 
