@@ -2,9 +2,52 @@ package com.example.kotlin_training
 
 // 시작함수
 fun main() {
-  helloWorld()
+ // 3. String Template
+//    val name = "Joyce";
+//    val lastName = "Hong";
+//    println("my name is ${name + lastName} I'm 23")
+//    println("is this true? ${1==0}")
+//    println("this is 2\$a")
 
-    println(add(3 , 5))
+    checkNum(1)
+
+}
+
+// 4. 조건식
+fun maxBy(a : Int, b: Int) : Int {
+    if ( a > b ) {
+        return a;
+    } else {
+        return b;
+    }
+
+}
+// 코틀린은 위에랑일치하게 다르게 표현가능
+// 삼항연산자를 대신해서 표현
+fun mayBy2(a: Int, b:Int) : Int = if(a>b) a else b
+
+// if만큼 쓰는게 when
+fun checkNum(score: Int): Unit {
+    when(score) {
+        0 -> println("this is 0")
+        1 -> println("this is 1")
+        2,3 -> println("this is 2 or 3")
+        else -> println("i don't know")
+    }
+
+    var b:Int = when(score)  {
+        1 -> 1
+        2 -> 2
+        else -> 3
+    }
+    println("b : ${b}")
+
+    // 점수 주기
+    when(score) {
+        in 90..100 -> println("You are geius")
+        in 10..80 -> println("not bad")
+        else -> println("okay")
+    }
 }
 
 // 1. 함수
@@ -55,4 +98,35 @@ fun hi() {
 }
 
 
+// Expression vs Statement
+// 값을 만들면 Expression 실행할때는 Statement
+// 코틀린의 모든 함수는 Expression 으로 사용
+// 명령같은 문장은 Statement
 
+// 5.Array and List
+
+// Array
+
+// List 1 IMutableList : 수정 불가능 , List 2. MutableList = 수정 가능
+fun array() {
+    val array = arrayOf(1,2,3)
+    val list = listOf(1,2,3)
+
+    // 타입 추론
+    val array2 = arrayOf(1,"d", 3.4f)
+    val list2 = listOf(1,"d", 11L)
+
+    array[0] = 3
+    var result = list.get(0)
+
+    val arrayList: ArrayList<Int> = arrayListOf<Int>()
+    // list a list B
+    // 주소 자체는 바뀌지 않음
+    arrayList.add(10)
+    arrayList.add(20)
+
+    // 참조값이 바뀌는 경우
+    // 다시 할당될 수 없음
+    // arrayList = arrayListOf() == 불가능
+
+}
